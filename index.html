@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b68">
+  <title>SILVER STAR ATHLETE CARE PRO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- 왼쪽 메뉴 -->
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-mark">★</span>
+        <span>
+          <b>SILVER STAR</b>
+          <small>ATHLETE CARE PRO</small>
+        </span>
+      </a>
+
+      <div class="side-label">선수 재활 관리</div>
+
+      <nav id="main-nav" class="nav-list">
+        <button class="nav-item active" data-page="home">⌂ 홈</button>
+        <button class="nav-item" data-page="athlete">♙ 선수 관리</button>
+        <button class="nav-item" data-page="camera">◎ 촬영 및 영상</button>
+        <button class="nav-item" data-page="analysis">⌁ 기능 평가</button>
+        <button class="nav-item" data-page="rehab">＋ 재활 운동 지도</button>
+        <button class="nav-item" data-page="report">▥ 검사 리포트</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span>
+        기기 내 기록 저장
+        <button id="language-toggle" class="language-toggle">
+          한국어 · English
+        </button>
+      </div>
+    </aside>
+
+    <!-- 메인 화면 -->
+    <main class="main-area">
+
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">SPORTS REHABILITATION PLATFORM</div>
+          <h1 id="page-title">선수 종합 관리</h1>
+        </div>
+        <div class="top-actions">
+          <span class="secure-pill">● 안전한 기록 관리</span>
+          <div class="avatar">SS</div>
+        </div>
+      </header>
+
+      <!-- 홈 -->
+      <section id="page-home" class="page active">
+
+        <div class="welcome-panel">
+          <div>
+            <div class="eyebrow light">WELCOME TO SILVER STAR</div>
+            <h2>움직임을 분석하고,<br>회복과 성장을 함께합니다.</h2>
+            <p>선수의 신체 기능을 확인하고 맞춤형 훈련 방향을 기록하세요.</p>
+            <button class="btn btn-light" data-go="analysis">
+              기능 평가 시작하기 →
+            </button>
+          </div>
+          <div class="welcome-symbol">✦</div>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <h2>관리 현황</h2>
+            <p>현재 기기에 저장된 검사 기록입니다.</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-icon blue">♙</span>
+            <span class="stat-label">등록 선수</span>
+            <strong id="stat-athletes">0명</strong>
+            <small>선수 관리에 등록된 인원</small>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-icon green">▥</span>
+            <span class="stat-label">검사 기록</span>
+            <strong id="stat-tests">0건</strong>
+            <small>저장된 평가 기록</small>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-icon purple">◷</span>
+            <span class="stat-label">최근 검사</span>
+            <strong id="stat-recent">-</strong>
+            <small>가장 최근 저장 날짜</small>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>빠른 시작</h3>
+                <p>필요한 기능을 선택하세요.</p>
+              </div>
+            </div>
+
+            <div class="quick-actions">
+              <button class="quick-card" data-go="athlete">
+                <span>♙</span>
+                <b>선수 등록</b>
+                <small>선수 기본 정보 입력</small>
+              </button>
+
+              <button class="quick-card" data-go="camera">
+                <span>◎</span>
+                <b>영상 촬영</b>
+                <small>카메라 또는 영상 업로드</small>
+              </button>
+
+              <button class="quick-card" data-go="analysis">
+                <span>⌁</span>
+                <b>기능 평가</b>
+                <small>기능 검사 결과 기록</small>
+              </button>
+
+              <button class="quick-card" data-go="report">
+                <span>▥</span>
+                <b>리포트 확인</b>
+                <small>검사 결과와 변화 확인</small>
+              </button>
+            </div>
+          </article>
+
+          <article class="panel notice-panel">
+            <div class="panel-heading">
+              <div>
+                <h3>검사 전 확인사항</h3>
+                <p>안전한 평가를 위한 안내</p>
+              </div>
+            </div>
+
+            <ul class="notice-list">
+              <li>통증이 발생하면 즉시 동작을 중단하세요.</li>
+              <li>카메라는 전신과 관절이 보이도록 설치하세요.</li>
+              <li>검사 결과는 참고용이며 의학적 진단이 아닙니다.</li>
+              <li>복귀 여부는 의료·재활 전문가와 상의하세요.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- 선수 관리 -->
+      <section id="page-athlete" class="page">
+        <div class="section-heading">
+          <div>
+            <h2>선수 정보 관리</h2>
+            <p>선수별 평가 기록을 구분해 저장합니다.</p>
+          </div>
+        </div>
+
+        <div class="panel form-panel">
+          <form id="athlete-form" class="form-grid">
+
+            <label>
+              선수 이름
+              <input name="name" required maxlength="30" placeholder="이름 입력">
+            </label>
+
+            <label>
+              운동 종목
+              <input name="sport" required maxlength="30" placeholder="예: 바이애슬론">
+            </label>
+
+            <label>
+              나이
+              <input name="age" type="number" min="1" max="100" placeholder="나이">
+            </label>
+
+            <label>
+              키 (cm)
+              <input name="height" type="number" min="50" max="250" step="0.1" placeholder="키">
+            </label>
+
+            <label>
+              체중 (kg)
+              <input name="weight" type="number" min="10" max="300" step="0.1" placeholder="체중">
+            </label>
+
+            <label>
+              부상·주의 사항
+              <input name="history" maxlength="150" placeholder="선택 입력">
+            </label>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">선수 등록</button>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <h3>등록 선수 목록</h3>
+              <p>선수를 선택하면 검사 대상자로 설정됩니다.</p>
+            </div>
+          </div>
+          <div id="athlete-list" class="athlete-list empty-state">
+            등록된 선수가 없습니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- 촬영 및 영상 -->
+      <section id="page-camera" class="page">
+        <div class="section-heading">
+          <div>
+            <h2>촬영 및 영상 관리</h2>
+            <p>실시간 촬영 또는 기존 영상을 불러올 수 있습니다.</p>
+          </div>
+        </div>
+
+        <div class="camera-layout">
+          <article class="panel camera-panel">
+
+            <div class="video-frame">
+              <video id="camera-video" autoplay muted playsinline></video>
+              <div id="camera-placeholder">
+                카메라를 시작하거나<br>
+                분석할 영상을 업로드하세요.
+              </div>
+              <canvas id="pose-canvas"></canvas>
+            </div>
+
+            <div class="camera-controls">
+              <button id="camera-start" class="btn btn-primary">
+                카메라 시작
+              </button>
+
+              <button id="camera-stop" class="btn btn-secondary" disabled>
+                카메라 종료
+              </button>
+
+              <button id="capture-photo" class="btn btn-secondary" disabled>
+                사진 저장
+              </button>
+            </div>
+
+            <div class="camera-controls upload-row">
+              <label class="btn btn-outline" for="video-upload">
+                영상 파일 선택
+              </label>
+              <input id="video-upload" type="file" accept="video/*" hidden>
+              <span id="upload-name">선택된 파일 없음</span>
+            </div>
+
+            <div id="camera-message" class="helper-text">
+              카메라 사용 시 브라우저 권한 허용이 필요합니다.
+              HTTPS 또는 localhost 환경에서 실행하세요.
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>촬영 안내</h3>
+
+            <ol class="instruction-list">
+              <li>전신이 화면 안에 들어오도록 카메라를 설치합니다.</li>
+              <li>검사 동작에 맞춰 정면 또는 측면을 선택합니다.</li>
+              <li>주변 장애물을 치우고 안전한 공간을 확보합니다.</li>
+              <li>통증이나 어지러움이 있으면 촬영을 중단합니다.</li>
+            </ol>
+
+            <div class="callout">
+              <b>분석 안내</b>
+              <p>
+                이 기본 버전은 영상 미리보기와 사진 저장을 지원합니다.
+                관절 자동 추정 기능은 별도 AI 모델 연결과 기기별 검증이 필요합니다.
+              </p>
+            </div>
+
+            <div id="captured-preview" class="captured-preview"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 신체 기능 평가 -->
+      <section id="page-analysis" class="page">
+        <div class="section-heading">
+          <div>
+            <h2>신체 기능 평가</h2>
+            <p>수행 가능한 검사를 선택하고 결과를 기록하세요.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <form id="assessment-form" class="form-grid">
+
+            <label>
+              검사 대상 선수
+              <select id="assessment-athlete" name="athleteId" required>
+                <option value="">선수를 먼저 등록하세요</option>
+              </select>
+            </label>
+
+            <label>
+              검사 항목
+              <select name="test" required>
+                <option value="한 발 서기">한 발 서기</option>
+                <option value="양발 스쿼트">양발 스쿼트</option>
+                <option value="런지">런지</option>
+                <option value="무릎-벽 테스트">무릎-벽 테스트</option>
+                <option value="스텝다운">스텝다운</option>
+                <option value="수직 점프 착지">수직 점프 착지</option>
+              </select>
+            </label>
+
+            <label>
+              좌측 결과
+              <input name="left" type="number" step="0.1" placeholder="예: 25">
+            </label>
+
+            <label>
+              우측 결과
+              <input name="right" type="number" step="0.1" placeholder="예: 27">
+            </label>
+
+            <label>
+              단위
+              <select name="unit">
+                <option value="초">초</option>
+                <option value="cm">cm</option>
+                <option value="도">도</option>
+                <option value="회">회</option>
+                <option value="점">점</option>
+              </select>
+            </label>
+
+            <label>
+              관찰 메모
+              <input name="note" maxlength="200" placeholder="자세 특징, 불편감 등">
+            </label>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                검사 결과 저장
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="panel assessment-guide">
+          <h3>검사 선택 시 주의</h3>
+          <p>
+            한 발 동작이 어렵거나 통증이 있다면 무리하지 마세요.
+            한 발 서기 대신 양발 지지 균형 검사 등 쉬운 대체 검사를
+            선택할 수 있습니다. 수행하지 못한 검사는 0점이 아니라
+            미측정으로 기록하세요.
+          </p>
+        </div>
+      </section>
+
+      <!-- 재활 운동 지도 -->
+      <section id="page-rehab" class="page">
+        <div class="section-heading">
+          <div>
+            <h2>재활·훈련 운동 안내</h2>
+            <p>일반적인 운동 예시입니다. 개인 상태에 따라 전문가의 지도를 받으세요.</p>
+          </div>
+        </div>
+
+        <div class="rehab-grid">
+
+          <article class="rehab-card">
+            <span class="rehab-icon">◉</span>
+            <h3>발목 가동성</h3>
+            <p>무릎-벽 움직임</p>
+            <ul>
+              <li>발뒤꿈치를 바닥에 유지합니다.</li>
+              <li>무릎을 발끝 방향으로 천천히 이동합니다.</li>
+              <li>통증 없는 범위에서 8~10회 실시합니다.</li>
+            </ul>
+            <span class="tag">가동범위 관찰</span>
+          </article>
+
+          <article class="rehab-card">
+            <span class="rehab-icon">◎</span>
+            <h3>균형 능력</h3>
+            <p>지지형 한 발 서기</p>
+            <ul>
+              <li>벽이나 의자 옆에서 실시합니다.</li>
+              <li>한 발을 살짝 들어 균형을 유지합니다.</li>
+              <li>좌우 10~20초씩 안전하게 반복합니다.</li>
+            </ul>
+            <span class="tag">균형 조절</span>
+          </article>
+
+          <article class="rehab-card">
+            <span class="rehab-icon">⌁</span>
+            <h3>하지 근력</h3>
+            <p>의자 스쿼트</p>
+            <ul>
+              <li>의자를 뒤에 두고 발을 어깨너비로 둡니다.</li>
+              <li>엉덩이를 뒤로 보내 천천히 앉았다 일어납니다.</li>
+              <li>편안한 범위에서 8회 실시합니다.</li>
+            </ul>
+            <span class="tag">기초 근력</span>
+          </article>
+
+          <article class="rehab-card">
+            <span class="rehab-icon">↗</span>
+            <h3>하지 안정성</h3>
+            <p>낮은 높이 스텝업</p>
+            <ul>
+              <li>흔들리지 않는 낮은 발판을 사용합니다.</li>
+              <li>발 전체로 디디고 천천히 올라갑니다.</li>
+              <li>통증 없이 균형을 유지할 수 있을 때 실시합니다.</li>
+            </ul>
+            <span class="tag">움직임 조절</span>
+          </article>
+
+        </div>
+
+        <div class="callout warning">
+          <b>중요</b>
+          <p>
+            이 운동 목록은 일반적인 교육용 예시이며 진단이나 개인별 처방이 아닙니다.
+            부상 직후, 통증, 부종, 불안정감이 있으면 의료·재활 전문가에게
+            먼저 확인하세요.
+          </p>
+        </div>
+      </section>
+
+      <!-- 검사 리포트 -->
+      <section id="page-report" class="page">
+        <div class="section-heading">
+          <div>
+            <h2>검사 결과 리포트</h2>
+            <p>저장된 검사 결과와 좌우 차이를 확인합니다.</p>
+          </div>
+          <button id="export-report" class="btn btn-primary">
+            리포트 인쇄 / PDF 저장
+          </button>
+        </div>
+
+        <div id="report-summary" class="stats-grid"></div>
+
+        <div class="content-grid report-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>최근 검사 기록</h3>
+                <p>선택된 선수의 검사 결과</p>
+              </div>
+            </div>
+            <div id="report-table" class="table-wrap">
+              검사 기록이 없습니다.
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>좌우 결과 비교</h3>
+            <p class="muted">단위가 같은 좌우 수치의 단순 비교입니다.</p>
+            <div id="comparison-chart" class="bar-chart empty-state">
+              비교할 결과가 없습니다.
+            </div>
+          </article>
+        </div>
+
+        <div class="callout">
+          <b>결과 해석 주의</b>
+          <p>
+            좌우 차이만으로 부상이나 기능 이상을 진단할 수 없습니다.
+            검사 방법, 단위, 촬영 조건을 함께 고려하고 전문가의 평가와 병행하세요.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        SILVER STAR ATHLETE CARE PRO
+        <span>선수의 움직임과 회복을 위한 기능 평가 도구</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
